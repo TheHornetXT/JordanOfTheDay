@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Jordan of the Day</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Jordan of the Day</h1>
+            <p class="tagline">A new Air Jordan showcase every day</p>
+        </header>
+        
+        <main>
+            <div class="jordan-card">
+                <div class="jordan-image">
+                    <img id="jordan-img" src="https://via.placeholder.com/500x400?text=Loading+Jordan..." alt="Jordan of the Day">
+                </div>
+                <div class="jordan-info">
+                    <h2 id="jordan-name">Loading Jordan...</h2>
+                    <p id="jordan-model">Model: </p>
+                    <p id="jordan-colorway">Colorway: </p>
+                    <p id="jordan-year">Release Year: </p>
+                    <p id="jordan-description">Description: </p>
+                </div>
+            </div>
+            
+            <div class="controls">
+                <button id="new-jordan-btn">Show Me Another Jordan</button>
+                <div class="rating-buttons">
+                    <button id="yay-btn" class="rating-btn">Yay 👍</button>
+                    <button id="nay-btn" class="rating-btn">Nay 👎</button>
+                </div>
+                <div id="rating-feedback"></div>
+            </div>
+        </main>
+        
+        <footer>
+            <p>Jordan of the Day - Showcasing iconic Air Jordan sneakers</p>
+        </footer>
+    </div>
+    
+    <script src="script.js"></script>
+</body>
+</html>
