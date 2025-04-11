@@ -5,11 +5,12 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Jordan of the Day</title>
     <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
 </head>
 <body>
     <div class="container">
         <header>
-            <h1>Jordan of the Day</h1>
+            <h1 id="date-display">Jordan of the Day</h1>
             <p class="tagline">A new Air Jordan showcase every day</p>
         </header>
         
@@ -29,6 +30,8 @@
             
             <div class="controls">
                 <button id="new-jordan-btn">Show Me Another Jordan</button>
+                <button id="calendar-btn"><i class="fas fa-calendar-alt"></i> Calendar View</button>
+                <button id="today-btn">Back to Today</button>
                 <div class="rating-buttons">
                     <button id="yay-btn" class="rating-btn">Yay 👍</button>
                     <button id="nay-btn" class="rating-btn">Nay 👎</button>
@@ -36,6 +39,18 @@
                 <div id="rating-feedback"></div>
             </div>
         </main>
+        
+        <div id="calendar-modal" class="modal">
+            <div class="calendar-content">
+                <div class="calendar-header">
+                    <button id="prev-month"><i class="fas fa-chevron-left"></i></button>
+                    <h2 id="current-month">April 2025</h2>
+                    <button id="next-month"><i class="fas fa-chevron-right"></i></button>
+                </div>
+                <div id="calendar-container" class="calendar"></div>
+                <button id="close-calendar" class="close-btn"><i class="fas fa-times"></i> Close</button>
+            </div>
+        </div>
         
         <footer>
             <p>Jordan of the Day - Showcasing iconic Air Jordan sneakers</p>
