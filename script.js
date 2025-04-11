@@ -1,4 +1,6 @@
-// Comprehensive Jordan Database with image links
+// Jordan Database and application logic combined in one file
+
+// Database of Jordan sneakers
 const jordanDatabase = [
     // Air Jordan 1
     {
@@ -276,38 +278,35 @@ const newJordanBtn = document.getElementById('new-jordan-btn');
 const yayBtn = document.getElementById('yay-btn');
 const nayBtn = document.getElementById('nay-btn');
 const ratingFeedback = document.getElementById('rating-feedback');
+const calendarBtn = document.getElementById('calendar-btn');
+const calendarModal = document.getElementById('calendar-modal');
+const calendarContainer = document.getElementById('calendar-container');
+const closeCalendarBtn = document.getElementById('close-calendar');
+const currentMonthDisplay = document.getElementById('current-month');
+const prevMonthBtn = document.getElementById('prev-month');
+const nextMonthBtn = document.getElementById('next-month');
+
+// Calendar variables
+let currentDate = new Date();
+let currentMonth = currentDate.getMonth();
+let currentYear = currentDate.getFullYear();
 
 // Function to generate a pseudo-random number based on the date
-function getDateSeed() {
-    const date = new Date();
-    const day = date.getDate();
-    const month = date.getMonth() + 1;
-    const year = date.getFullYear();
-    
+function getDateSeed(day, month, year) {
     // Create a simple hash based on the date
-    return (day * month * year) % jordanDatabase.length;
+    return ((day * month * year) % jordanDatabase.length);
 }
 
-// Function to display a random Jordan
-function displayRandomJordan() {
-    // Check if we have a stored Jordan for today
-    const today = new Date().toLocaleDateString();
-    const storedDate = localStorage.getItem('jordanDate');
-    let jordanIndex;
-    
-    // If it's a new day or manual refresh, get a new Jordan
-    if (storedDate !== today && !document.querySelector('.manual-refresh')) {
-        jordanIndex = getDateSeed();
-        localStorage.setItem('jordanDate', today);
-        localStorage.setItem('jordanIndex', jordanIndex);
-    } else if (document.querySelector('.manual-refresh')) {
-        // For manual refresh, get a truly random Jordan
-        jordanIndex = Math.floor(Math.random() * jordanDatabase.length);
-    } else {
-        // Use the stored Jordan for today
-        jordanIndex = localStorage.getItem('jordanIndex') || getDateSeed();
-    }
-    
+// Function to check if a date is in the future
+function isFutureDate(day, month, year) {
+    const checkDate = new Date(year, month, day);
+    const today = new Date();
+    today.setHours(0, 0, 0, 0); // Reset time part for accurate comparison
+    return checkDate > today;
+}
+
+// Function to display a Jordan based on index
+function displayJordan(jordanIndex) {
     // Get the Jordan from our database
     const jordan = jordanDatabase[jordanIndex];
     
@@ -328,9 +327,189 @@ function displayRandomJordan() {
     // Clear any previous rating feedback
     ratingFeedback.textContent = '';
     ratingFeedback.className = '';
+}
+
+// Function to display today's Jordan or a random one
+function displayRandomJordan() {
+    // Check if we have a stored Jordan for today
+    const today = new Date().toLocaleDateString();
+    const storedDate = localStorage.getItem('jordanDate');
+    let jordanIndex;
+    
+    // If it's a new day or manual refresh, get a new Jordan
+    if (storedDate !== today && !document.querySelector('.manual-refresh')) {
+        jordanIndex = getDateSeed(currentDate.getDate(), currentDate.getMonth() + 1, currentDate.getFullYear());
+        localStorage.setItem('jordanDate', today);
+        localStorage.setItem('jordanIndex', jordanIndex);
+    } else if (document.querySelector('.manual-refresh')) {
+        // For manual refresh, get a truly random Jordan
+        jordanIndex = Math.floor(Math.random() * jordanDatabase.length);
+    } else {
+        // Use the stored Jordan for today
+        jordanIndex = localStorage.getItem('jordanIndex') || getDateSeed(currentDate.getDate(), currentDate.getMonth() + 1, currentDate.getFullYear());
+    }
+    
+    displayJordan(jordanIndex);
     
     // Remove the manual refresh class if it exists
     document.querySelectorAll('.manual-refresh').forEach(el => el.classList.remove('manual-refresh'));
+}
+
+// Function to display a specific day's Jordan
+function displayDayJordan(day, month, year) {
+    // Check if the requested date is in the future
+    if (isFutureDate(day, month, year)) {
+        // Don't show future Jordans
+        alert("Future Jordans are a surprise! Check back on that date.");
+        return;
+    }
+    
+    const jordanIndex = getDateSeed(day, month + 1, year);
+    displayJordan(jordanIndex);
+    
+    // Update the header to show which day's Jordan is being displayed
+    const displayDate = new Date(year, month, day);
+    document.getElementById('date-display').textContent = `Jordan for ${displayDate.toLocaleDateString()}`;
+    document.getElementById('date-display').classList.add('alternate-date');
+    
+    // Add a class to the Go Back to Today button to make it visible
+    document.getElementById('today-btn').classList.add('visible');
+}
+
+// Function to go back to today's Jordan
+function goBackToToday() {
+    displayRandomJordan();
+    document.getElementById('date-display').textContent = 'Jordan of the Day';
+    document.getElementById('date-display').classList.remove('alternate-date');
+    document.getElementById('today-btn').classList.remove('visible');
+}
+
+// Function to generate and display the calendar
+function generateCalendar(month, year) {
+    // Update the month and year display
+    const monthNames = ["January", "February", "March", "April", "May", "June",
+                        "July", "August", "September", "October", "November", "December"];
+    currentMonthDisplay.textContent = `${monthNames[month]} ${year}`;
+    
+    // Clear previous calendar
+    while (calendarContainer.firstChild) {
+        calendarContainer.removeChild(calendarContainer.firstChild);
+    }
+    
+    // Add day names header
+    const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
+    const daysHeader = document.createElement('div');
+    daysHeader.className = 'days-header';
+    
+    dayNames.forEach(day => {
+        const dayEl = document.createElement('div');
+        dayEl.className = 'day-name';
+        dayEl.textContent = day;
+        daysHeader.appendChild(dayEl);
+    });
+    
+    calendarContainer.appendChild(daysHeader);
+    
+    // Create the calendar grid
+    const calendarGrid = document.createElement('div');
+    calendarGrid.className = 'calendar-grid';
+    
+    // Get the first day of the month
+    const firstDay = new Date(year, month, 1);
+    const startingDay = firstDay.getDay(); // 0 = Sunday, 1 = Monday, etc.
+    
+    // Get the number of days in the month
+    const lastDay = new Date(year, month + 1, 0);
+    const daysInMonth = lastDay.getDate();
+    
+    // Create empty cells for days before the first day of the month
+    for (let i = 0; i < startingDay; i++) {
+        const emptyCell = document.createElement('div');
+        emptyCell.className = 'calendar-day empty';
+        calendarGrid.appendChild(emptyCell);
+    }
+    
+    // Create cells for each day of the month
+    for (let day = 1; day <= daysInMonth; day++) {
+        const dayCell = document.createElement('div');
+        dayCell.className = 'calendar-day';
+        
+        // Check if this day is in the future
+        const isFuture = isFutureDate(day, month, year);
+        
+        // Mark today's date
+        const isToday = (day === new Date().getDate() && 
+                        month === new Date().getMonth() && 
+                        year === new Date().getFullYear());
+        
+        if (isToday) {
+            dayCell.classList.add('today');
+        }
+        
+        if (isFuture) {
+            // This is a future date, apply special styling
+            dayCell.classList.add('future');
+            
+            // Add day number
+            const dayNumber = document.createElement('div');
+            dayNumber.className = 'day-number';
+            dayNumber.textContent = day;
+            dayCell.appendChild(dayNumber);
+        } else {
+            // Only get Jordan thumbnail for past or current days
+            const jordanIndex = getDateSeed(day, month + 1, year);
+            const jordan = jordanDatabase[jordanIndex];
+            
+            // Create a preview element for the day's Jordan
+            const preview = document.createElement('div');
+            preview.className = 'jordan-preview';
+            preview.style.backgroundImage = `url(${jordan.image})`;
+            
+            // Add day number
+            const dayNumber = document.createElement('div');
+            dayNumber.className = 'day-number';
+            dayNumber.textContent = day;
+            
+            // Add tooltip with Jordan info
+            dayCell.title = jordan.name;
+            
+            // Append elements to the day cell
+            dayCell.appendChild(preview);
+            dayCell.appendChild(dayNumber);
+            
+            // Add click event to show this day's Jordan
+            dayCell.addEventListener('click', () => {
+                displayDayJordan(day, month, year);
+                closeCalendar();
+            });
+        }
+        
+        calendarGrid.appendChild(dayCell);
+    }
+    
+    calendarContainer.appendChild(calendarGrid);
+    
+    // Disable next month button if it would take us to a future month
+    const nextMonth = new Date();
+    nextMonth.setDate(1); // First day of current month
+    
+    if (month === nextMonth.getMonth() && year === nextMonth.getFullYear()) {
+        nextMonthBtn.disabled = true;
+    } else {
+        nextMonthBtn.disabled = false;
+    }
+}
+
+// Function to show the calendar modal
+function showCalendar() {
+    // Generate the calendar for the current month and year
+    generateCalendar(currentMonth, currentYear);
+    calendarModal.classList.add('show');
+}
+
+// Function to close the calendar modal
+function closeCalendar() {
+    calendarModal.classList.remove('show');
 }
 
 // Event listener for the "Show Me Another Jordan" button
@@ -338,18 +517,77 @@ newJordanBtn.addEventListener('click', function() {
     // Add a class to indicate this is a manual refresh
     this.classList.add('manual-refresh');
     displayRandomJordan();
+    
+    // Reset the date display
+    document.getElementById('date-display').textContent = 'Jordan of the Day';
+    document.getElementById('date-display').classList.remove('alternate-date');
+    document.getElementById('today-btn').classList.remove('visible');
 });
 
 // Event listeners for rating buttons
 yayBtn.addEventListener('click', function() {
-    ratingFeedback.textContent = 'You would rock these!';
+    ratingFeedback.textContent = '👍 You would rock these!';
     ratingFeedback.className = 'yay-animation';
 });
 
 nayBtn.addEventListener('click', function() {
-    ratingFeedback.textContent = 'Not your style!';
+    ratingFeedback.textContent = '👎 Not your style!';
     ratingFeedback.className = 'nay-animation';
 });
 
+// Event listener for the calendar button
+calendarBtn.addEventListener('click', showCalendar);
+
+// Event listener for closing the calendar
+closeCalendarBtn.addEventListener('click', closeCalendar);
+
+// Event listeners for navigating months in the calendar
+prevMonthBtn.addEventListener('click', () => {
+    currentMonth--;
+    if (currentMonth < 0) {
+        currentMonth = 11;
+        currentYear--;
+    }
+    generateCalendar(currentMonth, currentYear);
+});
+
+nextMonthBtn.addEventListener('click', () => {
+    currentMonth++;
+    if (currentMonth > 11) {
+        currentMonth = 0;
+        currentYear++;
+    }
+    generateCalendar(currentMonth, currentYear);
+});
+
+// Event listener for the "Today" button
+document.getElementById('today-btn').addEventListener('click', goBackToToday);
+
+// Close calendar when clicking outside the calendar content
+calendarModal.addEventListener('click', function(e) {
+    if (e.target === calendarModal) {
+        closeCalendar();
+    }
+});
+
 // Display a Jordan when the page loads
-document.addEventListener('DOMContentLoaded', displayRandomJordan);
+document.addEventListener('DOMContentLoaded', () => {
+    displayRandomJordan();
+    
+    // Create a date display if it doesn't exist
+    if (!document.getElementById('date-display')) {
+        const dateDisplay = document.createElement('h1');
+        dateDisplay.id = 'date-display';
+        dateDisplay.textContent = 'Jordan of the Day';
+        document.querySelector('header').prepend(dateDisplay);
+    }
+    
+    // Create a "Today" button if it doesn't exist
+    if (!document.getElementById('today-btn')) {
+        const todayBtn = document.createElement('button');
+        todayBtn.id = 'today-btn';
+        todayBtn.textContent = 'Back to Today';
+        todayBtn.addEventListener('click', goBackToToday);
+        document.querySelector('.controls').appendChild(todayBtn);
+    }
+});
