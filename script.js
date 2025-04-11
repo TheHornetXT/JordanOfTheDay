@@ -1,130 +1,360 @@
-// Jordan Database and application logic combined in one file
-
-// Database of Jordan sneakers
+// Comprehensive Jordan Database with ALL requested models
 const jordanDatabase = [
-    // Air Jordan 1
+    // ======== AIR JORDAN 1 HIGHS ========
     {
         name: "Air Jordan 1 'Bred'",
-        model: "Air Jordan 1",
+        model: "Air Jordan 1 High",
         colorway: "Black/Varsity Red",
         year: 1985,
-        description: "The 'Banned' colorway that allegedly violated NBA uniform rules, creating one of Nike's most successful marketing campaigns.",
+        description: "The 'Banned' colorway that allegedly violated NBA uniform rules.",
         image: "https://i.ebayimg.com/images/g/YlkAAOSwRb9h-DmJ/s-l400.jpg"
     },
     {
-        name: "Air Jordan 1 'Royal'",
-        model: "Air Jordan 1",
-        colorway: "Black/Varsity Royal",
-        year: 1985,
-        description: "OG colorway featuring bold royal blue accents that has remained one of the most sought-after Jordan 1s.",
-        image: "https://cdn.shopify.com/s/files/1/0603/3031/1875/files/4_85d327f7-a8cf-4ca7-8d5a-9566046ac471_540x.jpg?=75&v=1708311989"
-    },
-    {
         name: "Air Jordan 1 'Chicago'",
-        model: "Air Jordan 1",
+        model: "Air Jordan 1 High",
         colorway: "White/Black-Varsity Red",
         year: 1985,
-        description: "The original colorway featuring the Chicago Bulls' team colors. One of the most iconic sneakers of all time.",
+        description: "The original Chicago Bulls colorway. One of the most iconic sneakers.",
         image: "https://owp.klarna.com/product/640x640/3007065643/Nike-Air-Jordan-1-Retro-High-OG-Chicago-Lost-Found---Varsity-Red-Black-Sail-Muslin.jpg?ph=true"
     },
     {
-        name: "Air Jordan 1 'Shadow'",
-        model: "Air Jordan 1",
-        colorway: "Black/Grey",
-        year: 1985,
-        description: "Subtle yet classic colorway that pairs black with medium grey for a versatile look.",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRKFgqi9ZPL7m6AeYqgKqWK799RXNSFFfM_cQ&s"
+        name: "Air Jordan 1 High OG 'Not for Resale'",
+        model: "Air Jordan 1 High",
+        colorway: "Black/White-Varsity Red",
+        year: 2018,
+        description: "Features 'NOT FOR RESALE' text throughout the shoe.",
+        image: "https://tse2.mm.bing.net/th?id=OIP.Onn7X16k4ngwTv41O_utrAHaFM&pid=Api"
     },
     {
-        name: "Air Jordan 1 'UNC'",
-        model: "Air Jordan 1",
-        colorway: "White/University Blue",
-        year: 1985,
-        description: "Colorway inspired by Michael Jordan's alma mater, the University of North Carolina.",
-        image: "https://images.stockx.com/images/Air-Jordan-1-Retro-High-White-University-Blue-Black-Product.jpg?fit=fill&bg=FFFFFF&w=700&h=500&fm=webp&auto=compress&q=90&dpr=2&trim=color&updated_at=1738193358"
+        name: "Air Jordan 1 High OG 'Origin Story'",
+        model: "Air Jordan 1 High",
+        colorway: "White/Black-Varsity Red",
+        year: 2018,
+        description: "Inspired by Miles Morales' Spider-Man suit from Into the Spider-Verse.",
+        image: "https://tse4.mm.bing.net/th?id=OIP.eq7H_1WhH9Lnd8m5im_L9wHaEc&pid=Api"
     },
     {
-        name: "Air Jordan 1 'Obsidian/UNC'",
-        model: "Air Jordan 1",
-        colorway: "Sail/Obsidian/University Blue",
-        year: 2019,
-        description: "Premium colorway combining obsidian and UNC blue with sail accents.",
-        image: "https://i.ebayimg.com/images/g/V4AAAOSwNuBk0Ogm/s-l400.jpg"
+        name: "Air Jordan 1 High OG 'Georgetown'",
+        model: "Air Jordan 1 High",
+        colorway: "White/Blue-Grey",
+        year: 2022,
+        description: "Inspired by the Georgetown Hoyas color scheme.",
+        image: "https://tse2.mm.bing.net/th?id=OIP.dT54DqKZ1O3fb2MRw4fUsAHaFM&pid=Api"
     },
     {
-        name: "Air Jordan 1 'Shattered Backboard'",
-        model: "Air Jordan 1",
-        colorway: "White/Black-Orange",
-        year: 2015,
-        description: "Inspired by MJ's backboard-shattering dunk during an exhibition game in Italy.",
-        image: "https://www.modernnotoriety.com/wp-content/uploads/2024/07/air-jordan-1-high-og-shattered-backboard-2025.jpg"
-    },
-    {
-        name: "Air Jordan 1 'Bred Patent'",
-        model: "Air Jordan 1",
-        colorway: "Black/Varsity Red (Patent Leather)",
+        name: "Air Jordan 1 High OG 'University Blue'",
+        model: "Air Jordan 1 High",
+        colorway: "White/University Blue-Black",
         year: 2021,
-        description: "Patent leather version of the classic Bred colorway with a high-shine finish.",
-        image: "https://sneakerbardetroit.com/wp-content/uploads/2021/06/Air-Jordan-1-Patent-Bred-555088-063-Release-Date-3.png"
+        description: "Clean colorway with vibrant blue accents.",
+        image: "https://tse1.mm.bing.net/th?id=OIP.t3Xu-ARdK7qwg5YXDJFD8gHaHa&pid=Api"
     },
     {
-        name: "Off-White x Air Jordan 1 'Chicago'",
-        model: "Air Jordan 1",
-        colorway: "White/Black-Varsity Red (Deconstructed)",
-        year: 2017,
-        description: "Virgil Abloh's deconstructed take on the Chicago colorway as part of 'The Ten' collection.",
-        image: "https://i.ebayimg.com/images/g/yfMAAOSw2NZiqlz9/s-l1200.jpg"
+        name: "Air Jordan 1 High OG 'Neutral Grey'",
+        model: "Air Jordan 1 High",
+        colorway: "White/Neutral Grey",
+        year: 2021,
+        description: "Minimalist grey and white colorway.",
+        image: "https://tse4.mm.bing.net/th?id=OIP.hF6NBiZO1cuGsNU6IK4ocwAAAA&pid=Api"
     },
     {
-        name: "Travis Scott x Air Jordan 1 'Mocha'",
-        model: "Air Jordan 1",
-        colorway: "Sail/Dark Mocha-University Brown",
+        name: "Air Jordan 1 High OG 'Top 3'",
+        model: "Air Jordan 1 High",
+        colorway: "Black/White-Varsity Red-Royal Blue",
+        year: 2016,
+        description: "Combines elements from Bred, Royal and Chicago colorways.",
+        image: "https://tse4.mm.bing.net/th?id=OIP.ZkLE46OCTesVEhh5gHZHSQHaFM&pid=Api"
+    },
+    {
+        name: "Air Jordan 1 High OG 'Court Purple'",
+        model: "Air Jordan 1 High",
+        colorway: "White/Purple-Black",
+        year: 2020,
+        description: "Bold purple accents on a classic silhouette.",
+        image: "https://tse1.mm.bing.net/th?id=OIP.FN4um_wPieF7o01Tnep6wQAAAA&pid=Api"
+    },
+    {
+        name: "Air Jordan 1 High OG 'Pine Green'",
+        model: "Air Jordan 1 High",
+        colorway: "Black/Pine Green-White",
+        year: 2020,
+        description: "Dark green accents on black leather upper.",
+        image: "https://tse3.mm.bing.net/th?id=OIP.6GJ_lklv57z2Kio-mBLXygHaFM&pid=Api"
+    },
+    {
+        name: "Air Jordan 1 High OG 'Yellow Ochre'",
+        model: "Air Jordan 1 High",
+        colorway: "Black/Yellow Ochre-White",
+        year: 2018,
+        description: "Vibrant yellow accents on black leather.",
+        image: "https://tse2.mm.bing.net/th?id=OIP.u56pB0sd5l8qSneA17GrIgHaFM&pid=Api"
+    },
+    {
+        name: "Air Jordan 1 High OG 'Pass the Torch'",
+        model: "Air Jordan 1 High",
+        colorway: "White/Metallic Gold-Black",
+        year: 2018,
+        description: "Released for the 2018 NBA All-Star Game.",
+        image: "https://tse2.mm.bing.net/th?id=OIP.BxhSgh5EVa0QiRyn01Z8wwHaE8&pid=Api"
+    },
+    {
+        name: "Air Jordan 1 High OG 'Gold Toe'",
+        model: "Air Jordan 1 High",
+        colorway: "White/Black-Metallic Gold",
+        year: 2018,
+        description: "Features a metallic gold toe box.",
+        image: "https://tse4.mm.bing.net/th?id=OIP.XIM1mJti3_HyxfXl2HwnagHaFM&pid=Api"
+    },
+    {
+        name: "Air Jordan 1 High OG 'Union LA Blue Toe'",
+        model: "Air Jordan 1 High",
+        colorway: "White/Blue-Black",
+        year: 2018,
+        description: "Collaboration with Union LA featuring deconstructed elements.",
+        image: "https://tse1.mm.bing.net/th?id=OIP.HADG_42s8dDGfVXF8BZ-_AHaFM&pid=Api"
+    },
+    {
+        name: "Air Jordan 1 High OG 'Union LA Black Toe'",
+        model: "Air Jordan 1 High",
+        colorway: "Black/Varsity Red-White",
+        year: 2018,
+        description: "Collaboration with Union LA featuring deconstructed elements.",
+        image: "https://tse3.mm.bing.net/th?id=OIP.4yvHzW4i15sJiqf3ItMk9gHaEV&pid=Api"
+    },
+    {
+        name: "Air Jordan 1 High OG 'Dior'",
+        model: "Air Jordan 1 High",
+        colorway: "Grey/White",
+        year: 2020,
+        description: "Luxury collaboration with Dior featuring premium materials.",
+        image: "https://tse3.mm.bing.net/th?id=OIP.z2hvRJtS_ztNqXLTZVp6TgHaHa&pid=Api"
+    },
+    {
+        name: "Air Jordan 1 High OG 'Fragment'",
+        model: "Air Jordan 1 High",
+        colorway: "Black/Blue-White",
+        year: 2014,
+        description: "Collaboration with Fragment Design featuring royal blue accents.",
+        image: "https://tse3.mm.bing.net/th?id=OIP.fA7-hXSMRoKciLvg9-EFkgHaFR&pid=Api"
+    },
+    {
+        name: "Air Jordan 1 High OG 'LA to Chicago'",
+        model: "Air Jordan 1 High",
+        colorway: "Purple/Red-Yellow",
         year: 2019,
-        description: "Travis Scott's reverse swoosh design with premium suede and hidden pocket details.",
-        image: "https://m.media-amazon.com/images/I/7106ZXf0T4L._AC_UY900_.jpg"
+        description: "Color-changing paint reveals Chicago colorway underneath.",
+        image: "https://tse1.mm.bing.net/th?id=OIP.R1RPpZSY0htv_48Zwn0msQAAAA&pid=Api"
+    },
+    {
+        name: "Air Jordan 1 High OG 'Rookie of the Year'",
+        model: "Air Jordan 1 High",
+        colorway: "Wheat/Black-White",
+        year: 2018,
+        description: "Inspired by MJ's Rookie of the Year season.",
+        image: "https://tse4.mm.bing.net/th?id=OIP.fi0sjzJPgc0QXVZ9QmxPrgHaEB&pid=Api"
+    },
+    {
+        name: "Air Jordan 1 High OG 'PSG'",
+        model: "Air Jordan 1 High",
+        colorway: "Black/Purple-White",
+        year: 2018,
+        description: "Collaboration with Paris Saint-Germain football club.",
+        image: "https://tse3.mm.bing.net/th?id=OIP.vPeZmveYKTb1Vr3r734-CwHaFM&pid=Api"
+    },
+    {
+        name: "Air Jordan 1 High OG 'Nigel Sylvester'",
+        model: "Air Jordan 1 High",
+        colorway: "White/Black-Red",
+        year: 2018,
+        description: "Collaboration with BMX rider Nigel Sylvester.",
+        image: "https://tse3.mm.bing.net/th?id=OIP.Z1D8Hrd4sKVzHUZu5QBATwHaJR&pid=Api"
+    },
+    {
+        name: "Air Jordan 1 High OG 'SoleFly'",
+        model: "Air Jordan 1 High",
+        colorway: "Black/Orange-White",
+        year: 2018,
+        description: "Collaboration with Miami boutique SoleFly.",
+        image: "https://tse1.mm.bing.net/th?id=OIP.qVsUqfx4JBDY4N9b6wfImQHaFM&pid=Api"
+    },
+    {
+        name: "Air Jordan 1 High OG 'CO.JP Midnight Navy'",
+        model: "Air Jordan 1 High",
+        colorway: "White/Midnight Navy",
+        year: 2020,
+        description: "Japanese exclusive colorway.",
+        image: "https://tse3.mm.bing.net/th?id=OIP.MQ0E_c7MzN-eUsog3kp0jQHaFM&pid=Api"
+    },
+    {
+        name: "Air Jordan 1 High OG 'CO.JP Neutral Grey'",
+        model: "Air Jordan 1 High",
+        colorway: "White/Neutral Grey",
+        year: 2020,
+        description: "Japanese exclusive neutral grey colorway.",
+        image: "https://tse3.mm.bing.net/th?id=OIP.kMJplEoZFXBY9U6YD-DK_AHaHa&pid=Api"
+    },
+    {
+        name: "Air Jordan 1 High OG 'Black Toe'",
+        model: "Air Jordan 1 High",
+        colorway: "White/Black-Varsity Red",
+        year: 2016,
+        description: "Classic colorway with black toe box.",
+        image: "https://tse1.mm.bing.net/th?id=OIP.plVqKuTirqRhrxGIecbxnQHaHa&pid=Api"
+    },
+    {
+        name: "Air Jordan 1 Retro High OG 'Sky J Mauve'",
+        model: "Air Jordan 1 High",
+        colorway: "White/Mauve",
+        year: 2023,
+        description: "Soft mauve accents on a clean white base.",
+        image: "https://sneakernews.com/wp-content/uploads/2023/06/Air-Jordan-1-Sky-J-Mauve-2.jpg"
+    },
+    {
+        name: "Air Jordan 1 High OG 'Palomino'",
+        model: "Air Jordan 1 High",
+        colorway: "Black/Palomino",
+        year: 2023,
+        description: "Rich brown accents on black leather.",
+        image: "https://i.ebayimg.com/images/g/PZIAAOSwA0FlGJUM/s-l1200.jpg"
+    },
+    {
+        name: "Air Jordan 1 High OG 'Praline'",
+        model: "Air Jordan 1 High",
+        colorway: "Praline/White",
+        year: 2023,
+        description: "Warm brown and white colorway.",
+        image: "https://i.ebayimg.com/images/g/HkEAAOSw025k-6WK/s-l1200.jpg"
     },
 
-    // Air Jordan 2
+    // ======== AIR JORDAN 1 LOWS ========
     {
-        name: "Air Jordan 2 'White/Varsity Red'",
-        model: "Air Jordan 2",
-        colorway: "White/Varsity Red",
-        year: 1986,
-        description: "OG colorway of the Italian-made AJ2 with luxury details and no visible Swoosh.",
-        image: "https://sneakernews.com/wp-content/uploads/2014/06/air-jordan-2-white-varsity-red.jpg"
+        name: "Air Jordan 1 Low 'Starfish'",
+        model: "Air Jordan 1 Low",
+        colorway: "White/Starfish-Black",
+        year: 2022,
+        description: "Vibrant orange and black colorway.",
+        image: "https://i.ebayimg.com/images/g/wVQAAOSwx8NhfZhT/s-l1200.jpg"
     },
     {
-        name: "Air Jordan 2 'Black/Varsity Red'",
-        model: "Air Jordan 2",
-        colorway: "Black/Varsity Red",
-        year: 1986,
-        description: "Black-based version of the AJ2 with red accents and faux lizard skin details.",
-        image: "https://2app.kicksonfire.com/kofapp/upload/events_master_images/ipad_air-jordan-2-gs-altermate-87.jpg"
-    },
-    {
-        name: "Air Jordan 2 'White/Black'",
-        model: "Air Jordan 2",
+        name: "Air Jordan 1 Low 'Panda'",
+        model: "Air Jordan 1 Low",
         colorway: "White/Black",
-        year: 1986,
-        description: "Clean two-tone colorway that highlights the shoe's unique silhouette.",
-        image: "https://2app.kicksonfire.com/kofapp/upload/events_master_images/ipad_air-jordan-2-wing-it.jpg"
+        year: 2021,
+        description: "Clean black and white colorway that goes with everything.",
+        image: "https://i.ebayimg.com/images/g/4ZEAAOSwgBtkhJa5/s-l1200.jpg"
     },
     {
-        name: "Air Jordan 2 'Black/White'",
-        model: "Air Jordan 2",
-        colorway: "Black/White",
-        year: 1986,
-        description: "Reverse color blocking of the White/Black version for a more dramatic look.",
-        image: "https://image-cdn.hypb.st/https%3A%2F%2Fhypebeast.com%2Fimage%2F2010%2F09%2Fjordan-ii-black-white-retro-1.jpg?w=960&cbr=1&q=90&fit=max"
+        name: "Air Jordan 1 Low OG 'Mystic Navy'",
+        model: "Air Jordan 1 Low",
+        colorway: "Black/Mystic Navy",
+        year: 2022,
+        description: "Deep navy blue accents on black leather.",
+        image: "https://i.ebayimg.com/images/g/BNwAAOSwQlFjOHF3/s-l1200.jpg"
+    },
+    {
+        name: "Travis Scott x Air Jordan 1 Low 'Reverse Mocha'",
+        model: "Air Jordan 1 Low",
+        colorway: "Sail/Reverse Mocha",
+        year: 2022,
+        description: "Travis Scott's reverse swoosh design with premium materials.",
+        image: "https://i.ebayimg.com/images/g/HIMAAOSwGw9mU7nX/s-l1200.jpg"
+    },
+    {
+        name: "Air Jordan 1 Low SE 'Nothing But Net'",
+        model: "Air Jordan 1 Low",
+        colorway: "Multicolor/White",
+        year: 2022,
+        description: "Colorful basketball-inspired colorway.",
+        image: "https://m.media-amazon.com/images/I/61KPb4I4JBL._AC_SL1500_.jpg"
+    },
+    {
+        name: "Air Jordan 1 Low 'Tokyo 96'",
+        model: "Air Jordan 1 Low",
+        colorway: "White/Grey/Red",
+        year: 2020,
+        description: "Inspired by Tokyo and the 1996 Olympics.",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQftVa_lm_hwvb11IlthKVCm6Zrnr0__mZ85g&s"
+    },
+    {
+        name: "Air Jordan 1 Low 'Desert Berry' (GS)",
+        model: "Air Jordan 1 Low",
+        colorway: "White/Desert Berry",
+        year: 2022,
+        description: "Grade School exclusive with pink berry accents.",
+        image: "https://m.media-amazon.com/images/I/618vGSbFJeL._AC_UY900_.jpg"
+    },
+    {
+        name: "Air Jordan 1 Low 'Dior Custom'",
+        model: "Air Jordan 1 Low",
+        colorway: "Dior Grey/Obsidian Monogram",
+        year: 2020,
+        description: "Custom Dior-inspired colorway with monogram pattern.",
+        image: "https://www.forstepstyle.com/wp-content/uploads/2020/10/c5f2273e.jpg"
+    },
+    {
+        name: "Air Jordan 1 Low 'Chicago Reverse' (Custom)",
+        model: "Air Jordan 1 Low",
+        colorway: "White/Red/Black",
+        year: 2020,
+        description: "Custom reverse Chicago color blocking.",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRuBBCLSlgV3NLuKdKWb7R1S25FENUmTOYxug&s"
+    },
+    {
+        name: "Air Jordan 1 Low OG 'University Red'",
+        model: "Air Jordan 1 Low",
+        colorway: "White/University Red",
+        year: 2023,
+        description: "Clean white and red colorway.",
+        image: "https://sneakerpolitics.com/cdn/shop/articles/Sneaker-Politics-Jordan-1lowUniversityRed-IGPost-3.jpg?v=1696527250"
+    },
+    {
+        name: "Air Jordan 1 Low OG 'Black Toe'",
+        model: "Air Jordan 1 Low",
+        colorway: "White/Black/Red",
+        year: 2023,
+        description: "Low-top version of the classic Black Toe colorway.",
+        image: "https://i.ebayimg.com/images/g/DAwAAOSwrANlFt-w/s-l1200.jpg"
+    },
+    {
+        name: "Air Jordan 1 Low 'Royal Toe'",
+        model: "Air Jordan 1 Low",
+        colorway: "White/Royal Blue/Black",
+        year: 2023,
+        description: "Royal blue accents with black toe box.",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTGYT4CYeNGClysLkjde1iM1ZX_Ax4A95CfUw&s"
+    },
+    {
+        name: "Air Jordan 1 Low 'Aquatone'",
+        model: "Air Jordan 1 Low",
+        colorway: "White/Gold/Aquatone",
+        year: 2023,
+        description: "Soft blue and gold colorway.",
+        image: "https://classic.cdn.media.amplience.net/i/hibbett/E7716_4025_main4"
+    },
+    {
+        name: "Air Jordan 1 Zoom CMFT 2 'Día De Muertos'",
+        model: "Air Jordan 1 CMFT",
+        colorway: "Black/Black-Pale Ivory",
+        year: 2022,
+        description: "Day of the Dead-inspired colorway with special details.",
+        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRa3lZC06Z3X_cXLHqGoKkdjdAKRzWtoFZTcw&s"
+    },
+    {
+        name: "Air Jordan 1 Low 'Galactic Jade'",
+        model: "Air Jordan 1 Low",
+        colorway: "Galactic Jade/White",
+        year: 2023,
+        description: "Soft green jade colorway.",
+        image: "https://i.ebayimg.com/images/g/VXUAAOSwnUpmWXkr/s-l400.jpg"
     },
 
-    // Air Jordan 3
+    // ======== AIR JORDAN 3 ========
     {
         name: "Air Jordan 3 'White Cement'",
         model: "Air Jordan 3",
         colorway: "White/Cement Grey",
         year: 1988,
-        description: "First Jordan with visible Air, elephant print, and the Jumpman logo. Saved the Jordan line.",
+        description: "First Jordan with visible Air and elephant print.",
         image: "https://crepprotect.com/cdn/shop/articles/Screenshot_1205.png?v=1716979898"
     },
     {
@@ -132,49 +362,17 @@ const jordanDatabase = [
         model: "Air Jordan 3",
         colorway: "Black/Cement Grey",
         year: 1988,
-        description: "The black counterpart to the White Cement with the same iconic elephant print details.",
+        description: "Black version of the iconic cement print.",
         image: "https://static.nike.com/a/images/w_1280,q_auto,f_auto/773d349e-788a-4ea5-ab1f-70818fb571bf/air-jordan-3-black-cement-dn3707-010-release-date.jpg"
     },
-    {
-        name: "Air Jordan 3 'Fire Red'",
-        model: "Air Jordan 3",
-        colorway: "White/Fire Red",
-        year: 1988,
-        description: "Vibrant red accents against a white leather upper with grey elephant print.",
-        image: "https://i.ebayimg.com/images/g/s7QAAOSwgZBkDqRR/s-l1200.jpg"
-    },
-    {
-        name: "Air Jordan 3 'True Blue'",
-        model: "Air Jordan 3",
-        colorway: "White/True Blue",
-        year: 1988,
-        description: "Classic colorway featuring bold blue accents with the signature elephant print.",
-        image: "https://i.redd.it/315slww0q9651.jpg"
-    },
 
-    // Air Jordan 4
-    {
-        name: "Air Jordan 4 'White Cement'",
-        model: "Air Jordan 4",
-        colorway: "White/Cement Grey",
-        year: 1989,
-        description: "OG colorway with speckled cement grey accents and red flight tongue patch.",
-        image: "https://sneakernews.com/wp-content/uploads/2024/06/air-jordan-4-white-cement-2025-fv5029-100-2.jpg?w=1140"
-    },
-    {
-        name: "Air Jordan 4 'Black Cement'",
-        model: "Air Jordan 4",
-        colorway: "Black/Cement Grey",
-        year: 1989,
-        description: "Black-based version of the cement 4s with the same distinctive details.",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSfwOSBiaVOJj01-u0AgqPpu8lZyY6bG6o7Hg&s"
-    },
+    // ======== AIR JORDAN 4 ========
     {
         name: "Air Jordan 4 'Military Blue'",
         model: "Air Jordan 4",
         colorway: "White/Military Blue",
         year: 1989,
-        description: "Clean colorway with military blue accents that has seen several retro releases.",
+        description: "Clean colorway with military blue accents.",
         image: "https://i.ebayimg.com/images/g/qSAAAOSwo4hmGK~w/s-l1200.jpg"
     },
     {
@@ -182,88 +380,56 @@ const jordanDatabase = [
         model: "Air Jordan 4",
         colorway: "Black/Varsity Red",
         year: 2022,
-        description: "Black nubuck upper with vibrant red accents and speckled midsole details.",
+        description: "Black nubuck with vibrant red accents.",
         image: "https://i.ebayimg.com/images/g/RxUAAOSwRLxi2OdO/s-l1200.jpg"
     },
 
-    // Air Jordan 5
+    // ======== AIR JORDAN 5 ========
     {
         name: "Air Jordan 5 'Grape'",
         model: "Air Jordan 5",
         colorway: "White/Fire Red-Purple Ice",
         year: 1990,
-        description: "Distinctive colorway featuring vibrant purple accents and a translucent outsole.",
+        description: "Distinctive purple accents and translucent sole.",
         image: "https://sneakernews.com/wp-content/uploads/2020/03/Air-Jordan-5-Alternate-Grape-136027-500-8.jpg"
     },
     {
-        name: "Air Jordan 5 'Fire Red'",
+        name: "Air Jordan 5 GS 'Plaid'",
         model: "Air Jordan 5",
-        colorway: "White/Fire Red-Black",
-        year: 1990,
-        description: "OG colorway with reflective tongue and shark tooth midsole design.",
-        image: "https://i.ebayimg.com/images/g/~RIAAOSwBexizejS/s-l1200.jpg"
-    },
-    {
-        name: "Air Jordan 5 'Metallic'",
-        model: "Air Jordan 5",
-        colorway: "Black/Metallic Silver",
-        year: 1990,
-        description: "Black leather upper with metallic silver reflective tongue and shark teeth details.",
-        image: "https://www.nicekicks.com/files/2016/03/Air-Jordan-5-Metallic-.jpg"
+        colorway: "Black/Total Orange-Dark Obsidian",
+        year: 2021,
+        description: "Features a unique plaid pattern on the side.",
+        image: "https://i.ebayimg.com/images/g/7rMAAOSw379maqJK/s-l400.jpg"
     },
 
-    // Air Jordan 6
-    {
-        name: "Air Jordan 6 'Infrared'",
-        model: "Air Jordan 6",
-        colorway: "Black/Infrared",
-        year: 1991,
-        description: "The shoe MJ wore during his first NBA championship victory over the Lakers.",
-        image: "https://m.media-amazon.com/images/I/61w1L0XTebL._AC_UY300_.jpg"
-    },
+    // ======== AIR JORDAN 6 ========
     {
         name: "Air Jordan 6 'Carmine'",
         model: "Air Jordan 6",
         colorway: "White/Carmine-Black",
         year: 1991,
-        description: "Vibrant red and white colorway that stands out with its bold contrast.",
+        description: "Vibrant red and white colorway.",
         image: "https://m.media-amazon.com/images/I/61vp0qfsXvL._AC_UY900_.jpg"
     },
 
-    // Air Jordan 7
-    {
-        name: "Air Jordan 7 'Bordeaux'",
-        model: "Air Jordan 7",
-        colorway: "White/Bordeaux-Black",
-        year: 1992,
-        description: "Named for its deep burgundy accents, worn during the 1992 All-Star Game.",
-        image: "https://i.ebayimg.com/images/g/oOIAAOSw~w9h4FD1/s-l1200.jpg"
-    },
+    // ======== AIR JORDAN 7 ========
     {
         name: "Air Jordan 7 'Olympic'",
         model: "Air Jordan 7",
         colorway: "White/True Red-Navy Blue",
         year: 1992,
-        description: "USA-themed colorway worn by MJ during the 1992 Olympic 'Dream Team'.",
+        description: "USA-themed Dream Team colorway.",
         image: "https://s1.dswcdn.com/uploads/Nike_Air_Jordan_Shoes/Air_Jordan_VII_7_Shoes/Air_Jordan_VII_7_Retro_304775/Nike_Air_Jordan_7_VII_Retro_Olympic_White_Gold_Obsdn_Red_304775_135.jpg"
     },
 
-    // Air Jordan 8
+    // ======== AIR JORDAN 8 ========
     {
         name: "Air Jordan 8 'Aqua'",
         model: "Air Jordan 8",
         colorway: "White/Black-Aqua",
         year: 1993,
-        description: "Colorway featuring vibrant aqua blue accents with crossover ankle straps.",
+        description: "Features vibrant aqua blue accents.",
         image: "https://madeforthew.com/wp-content/uploads/2019/07/cropped-nike-wmns-air-jordan-viii-retro-white-aqua-ci1236-100-mood-1-1000x563.jpg"
-    },
-    {
-        name: "Air Jordan 8 'Playoffs'",
-        model: "Air Jordan 8",
-        colorway: "Black/True Red",
-        year: 1993,
-        description: "Worn during MJ's third championship run and first retirement.",
-        image: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSrWOtwfHZQCT2zTJbXygP8Eq-9QCQbVfkJSg&s"
     }
 ];
 
@@ -274,40 +440,42 @@ const jordanModel = document.getElementById('jordan-model');
 const jordanColorway = document.getElementById('jordan-colorway');
 const jordanYear = document.getElementById('jordan-year');
 const jordanDescription = document.getElementById('jordan-description');
-const newJordanBtn = document.getElementById('new-jordan-btn');
 const yayBtn = document.getElementById('yay-btn');
 const nayBtn = document.getElementById('nay-btn');
 const ratingFeedback = document.getElementById('rating-feedback');
-const calendarBtn = document.getElementById('calendar-btn');
-const calendarModal = document.getElementById('calendar-modal');
-const calendarContainer = document.getElementById('calendar-container');
-const closeCalendarBtn = document.getElementById('close-calendar');
-const currentMonthDisplay = document.getElementById('current-month');
-const prevMonthBtn = document.getElementById('prev-month');
-const nextMonthBtn = document.getElementById('next-month');
+const todayDateDisplay = document.getElementById('today-date');
 
-// Calendar variables
-let currentDate = new Date();
-let currentMonth = currentDate.getMonth();
-let currentYear = currentDate.getFullYear();
-
-// Function to generate a pseudo-random number based on the date
-function getDateSeed(day, month, year) {
-    // Create a simple hash based on the date
-    return ((day * month * year) % jordanDatabase.length);
+// Function to format today's date
+function formatDate(date) {
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    return date.toLocaleDateString('en-US', options);
 }
 
-// Function to check if a date is in the future
-function isFutureDate(day, month, year) {
-    const checkDate = new Date(year, month, day);
+// Function to generate a consistent index based on the date
+function getDailyJordanIndex() {
     const today = new Date();
-    today.setHours(0, 0, 0, 0); // Reset time part for accurate comparison
-    return checkDate > today;
+    const dateString = `${today.getFullYear()}-${today.getMonth()}-${today.getDate()}`;
+    
+    // Create a simple hash from the date string
+    let hash = 0;
+    for (let i = 0; i < dateString.length; i++) {
+        const char = dateString.charCodeAt(i);
+        hash = ((hash << 5) - hash) + char;
+        hash = hash & hash; // Convert to 32bit integer
+    }
+    
+    // Ensure the index is within the database bounds
+    return Math.abs(hash) % jordanDatabase.length;
 }
 
-// Function to display a Jordan based on index
-function displayJordan(jordanIndex) {
-    // Get the Jordan from our database
+// Function to display today's Jordan
+function displayTodaysJordan() {
+    // Display today's date
+    const today = new Date();
+    todayDateDisplay.textContent = formatDate(today);
+    
+    // Get today's Jordan index
+    const jordanIndex = getDailyJordanIndex();
     const jordan = jordanDatabase[jordanIndex];
     
     // Apply fade-in animation
@@ -329,265 +497,37 @@ function displayJordan(jordanIndex) {
     ratingFeedback.className = '';
 }
 
-// Function to display today's Jordan or a random one
-function displayRandomJordan() {
-    // Check if we have a stored Jordan for today
-    const today = new Date().toLocaleDateString();
-    const storedDate = localStorage.getItem('jordanDate');
-    let jordanIndex;
-    
-    // If it's a new day or manual refresh, get a new Jordan
-    if (storedDate !== today && !document.querySelector('.manual-refresh')) {
-        jordanIndex = getDateSeed(currentDate.getDate(), currentDate.getMonth() + 1, currentDate.getFullYear());
-        localStorage.setItem('jordanDate', today);
-        localStorage.setItem('jordanIndex', jordanIndex);
-    } else if (document.querySelector('.manual-refresh')) {
-        // For manual refresh, get a truly random Jordan
-        jordanIndex = Math.floor(Math.random() * jordanDatabase.length);
-    } else {
-        // Use the stored Jordan for today
-        jordanIndex = localStorage.getItem('jordanIndex') || getDateSeed(currentDate.getDate(), currentDate.getMonth() + 1, currentDate.getFullYear());
-    }
-    
-    displayJordan(jordanIndex);
-    
-    // Remove the manual refresh class if it exists
-    document.querySelectorAll('.manual-refresh').forEach(el => el.classList.remove('manual-refresh'));
-}
-
-// Function to display a specific day's Jordan
-function displayDayJordan(day, month, year) {
-    // Check if the requested date is in the future
-    if (isFutureDate(day, month, year)) {
-        // Don't show future Jordans
-        alert("Future Jordans are a surprise! Check back on that date.");
-        return;
-    }
-    
-    const jordanIndex = getDateSeed(day, month + 1, year);
-    displayJordan(jordanIndex);
-    
-    // Update the header to show which day's Jordan is being displayed
-    const displayDate = new Date(year, month, day);
-    document.getElementById('date-display').textContent = `Jordan for ${displayDate.toLocaleDateString()}`;
-    document.getElementById('date-display').classList.add('alternate-date');
-    
-    // Add a class to the Go Back to Today button to make it visible
-    document.getElementById('today-btn').classList.add('visible');
-}
-
-// Function to go back to today's Jordan
-function goBackToToday() {
-    displayRandomJordan();
-    document.getElementById('date-display').textContent = 'Jordan of the Day';
-    document.getElementById('date-display').classList.remove('alternate-date');
-    document.getElementById('today-btn').classList.remove('visible');
-}
-
-// Function to generate and display the calendar
-function generateCalendar(month, year) {
-    // Update the month and year display
-    const monthNames = ["January", "February", "March", "April", "May", "June",
-                        "July", "August", "September", "October", "November", "December"];
-    currentMonthDisplay.textContent = `${monthNames[month]} ${year}`;
-    
-    // Clear previous calendar
-    while (calendarContainer.firstChild) {
-        calendarContainer.removeChild(calendarContainer.firstChild);
-    }
-    
-    // Add day names header
-    const dayNames = ["Sun", "Mon", "Tue", "Wed", "Thu", "Fri", "Sat"];
-    const daysHeader = document.createElement('div');
-    daysHeader.className = 'days-header';
-    
-    dayNames.forEach(day => {
-        const dayEl = document.createElement('div');
-        dayEl.className = 'day-name';
-        dayEl.textContent = day;
-        daysHeader.appendChild(dayEl);
-    });
-    
-    calendarContainer.appendChild(daysHeader);
-    
-    // Create the calendar grid
-    const calendarGrid = document.createElement('div');
-    calendarGrid.className = 'calendar-grid';
-    
-    // Get the first day of the month
-    const firstDay = new Date(year, month, 1);
-    const startingDay = firstDay.getDay(); // 0 = Sunday, 1 = Monday, etc.
-    
-    // Get the number of days in the month
-    const lastDay = new Date(year, month + 1, 0);
-    const daysInMonth = lastDay.getDate();
-    
-    // Create empty cells for days before the first day of the month
-    for (let i = 0; i < startingDay; i++) {
-        const emptyCell = document.createElement('div');
-        emptyCell.className = 'calendar-day empty';
-        calendarGrid.appendChild(emptyCell);
-    }
-    
-    // Create cells for each day of the month
-    for (let day = 1; day <= daysInMonth; day++) {
-        const dayCell = document.createElement('div');
-        dayCell.className = 'calendar-day';
-        
-        // Check if this day is in the future
-        const isFuture = isFutureDate(day, month, year);
-        
-        // Mark today's date
-        const isToday = (day === new Date().getDate() && 
-                        month === new Date().getMonth() && 
-                        year === new Date().getFullYear());
-        
-        if (isToday) {
-            dayCell.classList.add('today');
-        }
-        
-        if (isFuture) {
-            // This is a future date, apply special styling
-            dayCell.classList.add('future');
-            
-            // Add day number
-            const dayNumber = document.createElement('div');
-            dayNumber.className = 'day-number';
-            dayNumber.textContent = day;
-            dayCell.appendChild(dayNumber);
-        } else {
-            // Only get Jordan thumbnail for past or current days
-            const jordanIndex = getDateSeed(day, month + 1, year);
-            const jordan = jordanDatabase[jordanIndex];
-            
-            // Create a preview element for the day's Jordan
-            const preview = document.createElement('div');
-            preview.className = 'jordan-preview';
-            preview.style.backgroundImage = `url(${jordan.image})`;
-            
-            // Add day number
-            const dayNumber = document.createElement('div');
-            dayNumber.className = 'day-number';
-            dayNumber.textContent = day;
-            
-            // Add tooltip with Jordan info
-            dayCell.title = jordan.name;
-            
-            // Append elements to the day cell
-            dayCell.appendChild(preview);
-            dayCell.appendChild(dayNumber);
-            
-            // Add click event to show this day's Jordan
-            dayCell.addEventListener('click', () => {
-                displayDayJordan(day, month, year);
-                closeCalendar();
-            });
-        }
-        
-        calendarGrid.appendChild(dayCell);
-    }
-    
-    calendarContainer.appendChild(calendarGrid);
-    
-    // Disable next month button if it would take us to a future month
-    const nextMonth = new Date();
-    nextMonth.setDate(1); // First day of current month
-    
-    if (month === nextMonth.getMonth() && year === nextMonth.getFullYear()) {
-        nextMonthBtn.disabled = true;
-    } else {
-        nextMonthBtn.disabled = false;
-    }
-}
-
-// Function to show the calendar modal
-function showCalendar() {
-    // Generate the calendar for the current month and year
-    generateCalendar(currentMonth, currentYear);
-    calendarModal.classList.add('show');
-}
-
-// Function to close the calendar modal
-function closeCalendar() {
-    calendarModal.classList.remove('show');
-}
-
-// Event listener for the "Show Me Another Jordan" button
-newJordanBtn.addEventListener('click', function() {
-    // Add a class to indicate this is a manual refresh
-    this.classList.add('manual-refresh');
-    displayRandomJordan();
-    
-    // Reset the date display
-    document.getElementById('date-display').textContent = 'Jordan of the Day';
-    document.getElementById('date-display').classList.remove('alternate-date');
-    document.getElementById('today-btn').classList.remove('visible');
-});
-
 // Event listeners for rating buttons
 yayBtn.addEventListener('click', function() {
-    ratingFeedback.textContent = '👍 You would rock these!';
+    ratingFeedback.textContent = 'You would rock these!';
     ratingFeedback.className = 'yay-animation';
+    
+    // Store the rating (optional)
+    localStorage.setItem(`rating-${new Date().toDateString()}`, 'yay');
 });
 
 nayBtn.addEventListener('click', function() {
-    ratingFeedback.textContent = '👎 Not your style!';
+    ratingFeedback.textContent = 'Not your style!';
     ratingFeedback.className = 'nay-animation';
-});
-
-// Event listener for the calendar button
-calendarBtn.addEventListener('click', showCalendar);
-
-// Event listener for closing the calendar
-closeCalendarBtn.addEventListener('click', closeCalendar);
-
-// Event listeners for navigating months in the calendar
-prevMonthBtn.addEventListener('click', () => {
-    currentMonth--;
-    if (currentMonth < 0) {
-        currentMonth = 11;
-        currentYear--;
-    }
-    generateCalendar(currentMonth, currentYear);
-});
-
-nextMonthBtn.addEventListener('click', () => {
-    currentMonth++;
-    if (currentMonth > 11) {
-        currentMonth = 0;
-        currentYear++;
-    }
-    generateCalendar(currentMonth, currentYear);
-});
-
-// Event listener for the "Today" button
-document.getElementById('today-btn').addEventListener('click', goBackToToday);
-
-// Close calendar when clicking outside the calendar content
-calendarModal.addEventListener('click', function(e) {
-    if (e.target === calendarModal) {
-        closeCalendar();
-    }
-});
-
-// Display a Jordan when the page loads
-document.addEventListener('DOMContentLoaded', () => {
-    displayRandomJordan();
     
-    // Create a date display if it doesn't exist
-    if (!document.getElementById('date-display')) {
-        const dateDisplay = document.createElement('h1');
-        dateDisplay.id = 'date-display';
-        dateDisplay.textContent = 'Jordan of the Day';
-        document.querySelector('header').prepend(dateDisplay);
-    }
-    
-    // Create a "Today" button if it doesn't exist
-    if (!document.getElementById('today-btn')) {
-        const todayBtn = document.createElement('button');
-        todayBtn.id = 'today-btn';
-        todayBtn.textContent = 'Back to Today';
-        todayBtn.addEventListener('click', goBackToToday);
-        document.querySelector('.controls').appendChild(todayBtn);
-    }
+    // Store the rating (optional)
+    localStorage.setItem(`rating-${new Date().toDateString()}`, 'nay');
 });
+
+// Display today's Jordan when the page loads
+document.addEventListener('DOMContentLoaded', displayTodaysJordan);
+
+// Optional: Check if the user already rated today's Jordan
+function checkExistingRating() {
+    const existingRating = localStorage.getItem(`rating-${new Date().toDateString()}`);
+    if (existingRating === 'yay') {
+        ratingFeedback.textContent = 'You already said you would rock these today!';
+        ratingFeedback.className = 'yay-animation';
+    } else if (existingRating === 'nay') {
+        ratingFeedback.textContent = 'You already said these weren\'t your style today!';
+        ratingFeedback.className = 'nay-animation';
+    }
+}
+
+// Uncomment to enable rating persistence
+// checkExistingRating();
